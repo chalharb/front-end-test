@@ -1,0 +1,21 @@
+// Import Bootstrap Compass integration
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap-compass";
+
+// Import Bootstrap for Sass
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+// Import Variables and Mixins
+@import "variables";
+@import "mixins";
+
+// Import Modular Components
+//@import "nav";
+
+// Import General Styles (if needed)
+@import "general";
+
+// Import Media Queries
+@import "mobile";
+@import "tablet";
+@import "laptop";
+@import "desktop";
