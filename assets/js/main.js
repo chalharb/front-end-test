@@ -1,6 +1,8 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 window.$ = window.jQuery = require('jquery');
 require('bootstrap-sass');
 
@@ -23,6 +25,9 @@ var app = function () {
 
             this.displaySearch();
             this.displayPhoneDirectory();
+            this.calculateWaitTime();
+            this.getTime();
+            this.getVideoCount();
         },
 
         displaySearch: function displaySearch() {
@@ -41,6 +46,40 @@ var app = function () {
                     $('.search').slideToggle();
                 }
             });
+        },
+
+        calculateWaitTime: function calculateWaitTime() {
+            var time = Math.floor(Math.random() * 60) + 1;
+
+            console.log(typeof time === 'undefined' ? 'undefined' : _typeof(time));
+            $('.timer-amount').text(time);
+
+            if (time <= 20) {
+                $('.timer').addClass('bg-green');
+            } else if (time > 20 && time <= 40) {
+                $('.timer').addClass('bg-orange');
+            } else if (time > 40 && time <= 60) {
+                $('.timer').addClass('bg-red');
+            }
+        },
+
+        getTime: function getTime() {
+            var date = new Date();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+
+            $('.time-as-of').text(strTime);
+        },
+
+        getVideoCount: function getVideoCount() {
+            var videoCount = $('.entry-list-item').length;
+
+            $('#video-count').text(videoCount);
         }
     };
 }();
