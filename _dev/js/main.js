@@ -21,6 +21,9 @@ var app = (function () {
 
             this.displaySearch();
             this.displayPhoneDirectory();
+            this.calculateWaitTime();
+            this.getTime();
+            this.getVideoCount();
         },
 
         displaySearch: function(){
@@ -39,6 +42,40 @@ var app = (function () {
                     $('.search').slideToggle();
                 }
             });
+        },
+
+        calculateWaitTime: function(){
+            var time = Math.floor(Math.random() * 60) + 1;
+
+            console.log(typeof time);
+            $('.timer-amount').text(time);
+
+            if(time <= 20){
+                $('.timer').addClass('bg-green');
+            } else if(time > 20 && time <= 40){
+                $('.timer').addClass('bg-orange');
+            } else if(time > 40 && time <= 60){
+                $('.timer').addClass('bg-red');
+            }
+        },
+
+        getTime: function(){
+            var date = new Date();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+
+            $('.time-as-of').text(strTime);
+        },
+
+        getVideoCount: function(){
+            var videoCount = $('.entry-list-item').length;
+
+            $('#video-count').text(videoCount);
         }
     }
 })();
