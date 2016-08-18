@@ -8,22 +8,14 @@
   background: $site_gray--light;
 }
 
-.btn-round{
-  @extend .btn;
+.bg-green{
+  background: $site_green;
+}
 
-  background: transparent;
-  color: $site_blue;
-  font-size: 17px;
-  border: 2px solid $site_blue;
-  padding: 11px 22px;
-  border-radius: 30px;
-  @include transition(color, 250ms);
-  @include transition(background, 250ms);
-  @include transition(border, 250ms);
+.bg-orange{
+  background: orange;
+}
 
-  &:hover{
-    background: darken($site_gray--light, 5%);
-    border: 2px solid darken($site_blue, 15%);
-    color: darken($site_blue, 15%);
-  }
+.bg-red{
+  background: red;
 }

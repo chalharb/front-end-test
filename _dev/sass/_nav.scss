@@ -18,6 +18,11 @@ $link_font_size--md : 14px;
   border-top: 5px solid $site_blue;
   border-bottom: 1px solid #cccccc;
   z-index: 1;
+  .nav-container{
+    @extend .container-fluid;
+
+    max-width: 1400px;
+  }
   &-header {
     .navbar-toggle {
       right : -15px;
