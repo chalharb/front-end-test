@@ -4,13 +4,13 @@
   .page-heading{
     h1{
       font-weight: 400;
-      margin: 60px 0 0;
+      margin: 68px 0 0;
 
       &:after{
         content: "";
         display: block;
         height: 2px;
-        width: 150px;
+        //width: 150px;
         margin: 20px 0 20px;
         background: $site_blue;
       }
@@ -21,7 +21,7 @@
       padding: 0;
       margin-bottom: 30px;
       li{
-        color: $text_color--light;
+        //color: $text_color--light;
         font-weight: 300;
         a{
           i {
@@ -38,7 +38,7 @@
   }
 
   .page-content{
-    padding: 50px 0;
+    padding: 50px 0 95px;
     h3{
       padding-bottom: 50px;
       margin:0;
