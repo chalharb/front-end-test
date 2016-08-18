@@ -1,2 +1,47 @@
 /* Small devices (tablets, 768px to 992px) */
-@media (min-width : $screen-sm) { }
+@media (min-width : $screen-sm) {
+
+  .page-heading{
+    h1{
+      font-weight: 400;
+      margin: 60px 0 0;
+
+      &:after{
+        content: "";
+        display: block;
+        height: 2px;
+        width: 150px;
+        margin: 20px 0 20px;
+        background: $site_blue;
+      }
+    }
+
+    .breadcrumb{
+      background: none;
+      padding: 0;
+      margin-bottom: 30px;
+      li{
+        color: $text_color--light;
+        font-weight: 300;
+        a{
+          i {
+            color: $site_blue;
+            @include transition(color, 250ms);
+
+            &:hover {
+              color: darken($site_blue, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .page-content{
+    padding: 50px 0;
+    h3{
+      padding-bottom: 50px;
+      margin:0;
+    }
+  }
+}

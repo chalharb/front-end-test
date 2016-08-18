@@ -1,2 +1,23 @@
 /* Styles Variables */
 
+// Media Query Breakpoints
+$screen-sm : 768px;
+$screen-md : 992px;
+$screen-lg : 1200px;
+
+//font imports
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+// Site Colors
+$site_white: #ffffff;
+$site_gray--light: #f5f7f9;
+$site_gray--medium: #8f9294;
+$site_blue: #428de2;
+$site_green: #7ed321;
+
+$text_color: #4a4a4a;
+$text_color--light: $site_gray--medium;

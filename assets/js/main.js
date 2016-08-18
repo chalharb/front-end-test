@@ -4,6 +4,51 @@
 window.$ = window.jQuery = require('jquery');
 require('bootstrap-sass');
 
+/**
+ * Created by logan on June 16, 2016.
+ */
+var app = function () {
+    'use strict';
+
+    var s;
+    return {
+        settings: {
+            document: $(document),
+            pathname: window.location.pathname,
+            html: $('html')
+        },
+
+        init: function init() {
+            s = this.settings;
+
+            this.displaySearch();
+            this.displayPhoneDirectory();
+        },
+
+        displaySearch: function displaySearch() {
+            $('#search_btn').on('click', function () {
+                $('.search').slideToggle();
+                if ($(".call").css('display') == 'block') {
+                    $('.call').slideToggle();
+                }
+            });
+        },
+
+        displayPhoneDirectory: function displayPhoneDirectory() {
+            $('#phone_btn').on('click', function () {
+                $('.call').slideToggle();
+                if ($(".search").css('display') == 'block') {
+                    $('.search').slideToggle();
+                }
+            });
+        }
+    };
+}();
+
+$(function () {
+    app.init();
+});
+
 },{"bootstrap-sass":2,"jquery":3}],2:[function(require,module,exports){
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
