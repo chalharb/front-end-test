@@ -1,5 +1,7 @@
 # Front End Development Test
 
+Finished product can be viewed [here](http://hca.loganharber.com)
+
 **To build project:**
  * `npm install`
  * `gulp watch`
