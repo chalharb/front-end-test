@@ -13,6 +13,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
     <title>Front End Code Test</title>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico?v=2">
 
   <!-- styles -->
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -34,7 +35,7 @@
 <nav class="navbar navbar-default">
     <div class="nav-container">
         <div class="navbar-header">
-            <button type="button" class="pull-left navbar-toggle collapsed" data-toggle="collapse"
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#mobile-nav" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar top-bar"></span>
@@ -44,9 +45,12 @@
             <ul class="list-inline icon-group">
                 <li><a href="#" id="search_btn"><i class="glyphicon glyphicon-search"></i></a></li>
                 <li><a href="#" id="phone_btn"><i class="glyphicon glyphicon-earphone"></i></a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-map-marker"></i></a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-heart"></i></a></li>
+                <li><a href="#" id="location_btn"><i class="glyphicon glyphicon-map-marker"></i></a></li>
+                <li><button class="login_btn" data-toggle="modal" data-target="#loginModal"><i class="glyphicon glyphicon-heart heart"></i></button></li>
             </ul>
+            <a href="#" class="navbar-brand hidden-sm hidden-md hidden-lg">
+                <img src="assets/img/beechwood-logo.svg" alt="Beechwood Memorial Hospital">
+            </a>
         </div>
         <div class="collapse navbar-collapse" id="mobile-nav">
             <ul class="nav navbar-nav navbar-left">
@@ -62,38 +66,109 @@
 
 <div class="search">
     <div class="container">
-        <h3>Search Our Site</h3>
-        <form class="form-inline">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="">
-                <button type="button" class="">Search</button>
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Search Our Site</h3>
+                <div class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="">
+                        <button type="button" class="btn-blue">Search</button>
+                    </div>
+                </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
 <div class="call">
     <div class="container">
-        <h3>Departments</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Departments</h3>
+            </div>
+            <div class="col-xs-6">
+                <h4>Cardiology</h4>
+                <a class="btn-blue" href="tel:555-555-5555">(555) 555-555</a>
+            </div>
+            <div class="col-xs-6">
+                <h4>Oncology</h4>
+                <a class="btn-blue" href="tel:555-555-5555">(555) 555-555</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hospital-locations">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Our Locations</h3>
+                <h4>Beechwood Memorial Hospital</h4>
+                <address>1234 Fake Street <br/>Nashville, TN 37211</address>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Login</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn-blue">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="hospital-info">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 clearfix">
+            <div class="col-sm-6 hidden-xs">
                 <div class="hospital-info--left">
                     <a href="#">
                         <img class="img-responsive" src="assets/img/beechwood-logo.svg" alt="Beechwood Memorial Hospital">
                     </a>
                 </div>
             </div>
-            <div class="col-sm-6 clearfix">
+            <div class="col-sm-6">
                 <div class="hospital-info--right">
                     <span class="wait-time--heading">Average ER Wait Time</span>
                     <div class="wait-time-left">
                         <span class="location">Beechwood Memorial Medical Center</span>
-                        as of <span class="time-as-of">12:00 am</span> today
+                        <span class="time">as of <span class="time time-as-of">12:00 am</span> today</span>
                     </div>
                     <div class="wait-time-right">
                         <div class="timer">
@@ -124,6 +199,78 @@
     <div class="container">
         <h3><span id="video-count">5</span> Videos</h3>
         <div class="entry-list">
+            <div class="row entry-list-item">
+                <div class="col-md-8 entry-list-item--video">
+                    <div class='embed-container'>
+                        <iframe src='https://www.youtube.com/embed/ScMzIvxBSi4'
+                                frameborder='0'
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="col-md-4 entry-list-item--content">
+                    <h4>Surgery Done Minimally Invasively with Robotic Surgery: Quicker Recover Time</h4>
+                    <p class="text-ellipse">Dr. Danny Shaban discusses how surgery has progressed with minimally invasive robotic surgery.
+                        These surgeries used to be major surgeries and women could be out of work for 4-6 weeks. Now,
+                        working women could be back...</p>
+                    <a href="#" class="btn-round">Read more</a>
+                </div>
+            </div>
+            <div class="row entry-list-item">
+                <div class="col-md-8 entry-list-item--video">
+                    <div class='embed-container'>
+                        <iframe src='https://www.youtube.com/embed/ScMzIvxBSi4'
+                                frameborder='0'
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="col-md-4 entry-list-item--content">
+                    <h4>Surgery Done Minimally Invasively with Robotic Surgery: Quicker Recover Time</h4>
+                    <p class="text-ellipse">Dr. Danny Shaban discusses how surgery has progressed with minimally invasive robotic surgery.
+                        These surgeries used to be major surgeries and women could be out of work for 4-6 weeks. Now,
+                        working women could be back...</p>
+                    <a href="#" class="btn-round">Read more</a>
+                </div>
+            </div>
+            <div class="row entry-list-item">
+                <div class="col-md-8 entry-list-item--video">
+                    <div class='embed-container'>
+                        <iframe src='https://www.youtube.com/embed/ScMzIvxBSi4'
+                                frameborder='0'
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="col-md-4 entry-list-item--content">
+                    <h4>Surgery Done Minimally Invasively with Robotic Surgery: Quicker Recover Time</h4>
+                    <p class="text-ellipse">Dr. Danny Shaban discusses how surgery has progressed with minimally invasive robotic surgery.
+                        These surgeries used to be major surgeries and women could be out of work for 4-6 weeks. Now,
+                        working women could be back...</p>
+                    <a href="#" class="btn-round">Read more</a>
+                </div>
+            </div>
+            <div class="row entry-list-item">
+                <div class="col-md-8 entry-list-item--video">
+                    <div class='embed-container'>
+                        <iframe src='https://www.youtube.com/embed/ScMzIvxBSi4'
+                                frameborder='0'
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="col-md-4 entry-list-item--content">
+                    <h4>Surgery Done Minimally Invasively with Robotic Surgery: Quicker Recover Time</h4>
+                    <p class="text-ellipse">Dr. Danny Shaban discusses how surgery has progressed with minimally invasive robotic surgery.
+                        These surgeries used to be major surgeries and women could be out of work for 4-6 weeks. Now,
+                        working women could be back...</p>
+                    <a href="#" class="btn-round">Read more</a>
+                </div>
+            </div>
             <div class="row entry-list-item">
                 <div class="col-md-8 entry-list-item--video">
                     <div class='embed-container'>
