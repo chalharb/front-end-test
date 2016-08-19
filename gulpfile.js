@@ -8,9 +8,5 @@ elixir.config.assetsPath = '_dev';
 elixir.config.publicPath = 'assets';
 
 elixir(function(mix) {
-    mix.sass('styles.scss')
-});
-
-elixir(function(mix) {
-    mix.browserify('main.js');
+    mix.sass('styles.scss').browserify('main.js');
 });
