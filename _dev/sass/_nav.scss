@@ -1,7 +1,7 @@
 $nav_bg: white;
 $navbar-nav-bg: $site_gray--light;
 
-$link_text_color--default: $text_color--light;
+$link_text_color--default: $text_color;
 $link_text_bg--hover: $site_gray--light;
 
 $icon_color--default: $text_color--light;
@@ -21,7 +21,7 @@ $link_font_size--md: 14px;
   .nav-container {
     @extend .container-fluid;
 
-    max-width: 1400px;
+    max-width: 1355px;
   }
   &-header {
     //border-bottom: 1px solid #cccccc;
