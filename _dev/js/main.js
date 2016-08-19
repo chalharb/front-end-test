@@ -3,7 +3,7 @@ require('bootstrap-sass');
 
 
 /**
- * Created by logan on June 16, 2016.
+ * Created by logan on August 16, 2016.
  */
 var app = (function () {
     'use strict';
@@ -21,33 +21,60 @@ var app = (function () {
 
             this.displaySearch();
             this.displayPhoneDirectory();
+            this.displayLocations();
             this.calculateWaitTime();
             this.getTime();
             this.getVideoCount();
         },
 
+        /* Display Search area on search icon click */
         displaySearch: function(){
             $('#search_btn').on('click', function(){
                $('.search').slideToggle();
+
                 if( $(".call").css('display') == 'block') {
                     $('.call').slideToggle();
+                }
+
+                if( $(".hospital-locations").css('display') == 'block') {
+                    $('.hospital-locations').slideToggle();
                 }
             });
         },
 
+        /* Display Phone Directory on icon click */
         displayPhoneDirectory: function(){
             $('#phone_btn').on('click', function(){
                 $('.call').slideToggle();
                 if( $(".search").css('display') == 'block') {
                     $('.search').slideToggle();
                 }
+
+                if( $(".hospital-locations").css('display') == 'block') {
+                    $('.hospital-locations').slideToggle();
+                }
             });
         },
 
+        /* Display Locations on icon click */
+        displayLocations: function(){
+            $('#location_btn').on('click', function(){
+                $('.hospital-locations').slideToggle();
+
+                if( $(".search").css('display') == 'block') {
+                    $('.search').slideToggle();
+                }
+
+                if( $(".call").css('display') == 'block') {
+                    $('.call').slideToggle();
+                }
+            });
+        },
+
+        /* Calculate a Fake Wait Time and assign a color accordingly */
         calculateWaitTime: function(){
             var time = Math.floor(Math.random() * 60) + 1;
 
-            console.log(typeof time);
             $('.timer-amount').text(time);
 
             if(time <= 20){
@@ -59,6 +86,7 @@ var app = (function () {
             }
         },
 
+        /* Calculate Current Time for the Wait Time */
         getTime: function(){
             var date = new Date();
             var hours = date.getHours();
@@ -72,6 +100,7 @@ var app = (function () {
             $('.time-as-of').text(strTime);
         },
 
+        /* Dynamic Video Count */
         getVideoCount: function(){
             var videoCount = $('.entry-list-item').length;
 
