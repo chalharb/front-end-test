@@ -1,21 +1,60 @@
 /* General Styles */
 
-*{
+* {
   color: $text_color;
 }
 
-.page-content{
+.btn-blue {
+  @extend .btn;
+  @extend .btn-default;
+  background: $site_blue;
+  border: none;
+  color: white;
+
+  &:hover {
+    background: darken($site_blue, 4%);
+    color: white;
+  }
+
+  &:active, &:focus {
+    background: darken($site_blue, 4%) !important;
+    color: white !important;
+  }
+}
+
+.page-content {
   background: $site_gray--light;
 }
 
-.bg-green{
+.bg-green {
   background: $site_green;
 }
 
-.bg-orange{
+.bg-orange {
   background: orange;
 }
 
-.bg-red{
+.bg-red {
   background: red;
+}
+
+.vertical-alignment-helper {
+  display: table;
+  height: 100%;
+  width: 95%;
+  margin: auto;
+  pointer-events: none;
+}
+
+.vertical-align-center {
+  display: table-cell;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+.modal-content {
+  width: inherit;
+  height: inherit;
+  margin: 0 auto;
+  pointer-events: all;
 }

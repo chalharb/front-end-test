@@ -13,7 +13,7 @@
   @include transition(background, 250ms);
   @include transition(border, 250ms);
 
-  &:hover{
+  &:hover {
     background: darken($site_gray--light, 5%);
     border: 2px solid darken($color, 15%);
     color: darken($color, 15%);

@@ -1,105 +1,53 @@
 /* Mobile Styles (width < 768px)*/
 
-.hospital-info{
-  padding: 30px 0;
-  border-bottom: 1px solid #cccccc;
-  &--left{
-    float: left;
-    a{
-      img{
-
-
-      }
-    }
-  }
-
-  &--right{
-    float: right;
-    text-align: right;
-
-    .wait-time--heading{
-      display: block;
-      &:after{
-        content: "";
-        display: block;
-        height: 2px;
-        width: 100%;
-        background: gray;
-        margin: 12px 0;
-      }
-    }
-    .wait-time-left{
-      float: left;
-      margin-right: 10px;
-      margin-top: 5px;
-      .location{
-        display:block;
-      }
-    }
-    .wait-time-right{
-      float: right;
-      text-align: center;
-      .timer{
-        color: white;
-        border-radius: 4px;
-        padding: 8px 16px;
-        .timer-amount{
-          color: inherit;
-          display: block;
-        }
-      }
-    }
-  }
-}
-
-
-.search{
+.search {
   display: none;
   padding: 30px 0;
   background: #f5f7f9;
   border-bottom: 1px solid #cccccc;
-  h3{
+  h3 {
     margin: 0 0 15px;
   }
-  .form-group{
+  .form-group {
     width: 100% !important;
   }
-  input[type="text"]{
-    width: 72% !important;
+  input[type="text"] {
+    width: 80% !important;
     display: inline !important;
   }
-  button{
-    width: 25% !important;
-      @extend .btn;
-      @extend .btn-default;
-      /*@extend .btn-block;*/
-
-      background: $site_blue;
-      color: white;
-      @include transition(background, 250ms);
-
-      &:hover{
-        background: lighten($site_blue, 10%);
-        color: white;
-      }
-      &:visited, &:active, &:focus{
-        background: $site_blue !important;
-        color: white !important;
-      }
+  button {
+    width: 18% !important;
   }
 }
 
-.call{
+.call {
   display: none;
   padding: 30px 0;
   background: #f5f7f9;
   border-bottom: 1px solid #cccccc;
-  h3{
+  h3 {
     margin: 0 0 15px;
   }
-  .departments{
+  h4 {
     text-align: center;
-    a{
+  }
+  a {
+    display: block;
+    margin: auto;
+  }
+}
+
+.hospital-locations {
+  display: none;
+  padding: 30px 0;
+  background: #f5f7f9;
+  border-bottom: 1px solid #cccccc;
+  h3 {
+    margin: 0 0 15px;
+  }
+  .departments {
+    text-align: center;
+    a {
       @extend .btn;
       @extend .btn-default;
       @extend .btn-block;
@@ -108,11 +56,11 @@
       color: white;
       @include transition(background, 250ms);
 
-      &:hover{
+      &:hover {
         background: lighten($site_blue, 10%);
         color: white;
       }
-      &:visited, &:active, &:focus{
+      &:visited, &:active, &:focus {
         background: $site_blue !important;
         color: white !important;
       }
@@ -120,12 +68,65 @@
   }
 }
 
-.page-heading{
-  h1{
+.hospital-info {
+  padding: 30px 0;
+  border-bottom: 1px solid #cccccc;
+  &--left {
+    a {
+      img {  }
+    }
+  }
+
+  &--right {
+    display: block;
+    margin: auto;
+    max-width: 300px;
+
+    .wait-time--heading {
+      display: block;
+      text-align: center;
+      &:after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: gray;
+        margin: 12px 0;
+      }
+    }
+    .wait-time-left {
+      display: inline-block;
+      text-align: right;
+      margin-right: 5px;
+      .location {
+        display: block;
+      }
+      .time {
+        color: $site_blue !important;
+      }
+    }
+    .wait-time-right {
+      display: inline-block;
+      text-align: center;
+      .timer {
+        color: white;
+        border-radius: 4px;
+        padding: 8px 16px;
+        .timer-amount {
+          color: inherit;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.page-heading {
+  h1 {
     font-weight: 400;
     margin: 30px 0 0;
 
-    &:after{
+    &:after {
       content: "";
       display: block;
       height: 2px;
@@ -135,18 +136,17 @@
     }
   }
 
-  .breadcrumb{
+  .breadcrumb {
     background: none;
     padding: 0;
     margin-bottom: 30px;
-    li{
+    li {
       color: #cccccc;
       font-weight: 300;
       font-size: 13px;
-      a{
+      a {
         i {
           color: $site_blue;
-          // @include transition(color, 250ms);
 
           &:hover {
             color: darken($site_blue, 10%);
@@ -157,11 +157,11 @@
   }
 }
 
-.page-content{
+.page-content {
   padding: 30px 0;
-  h3{
+  h3 {
     padding-bottom: 45px;
-    margin:0;
+    margin: 0;
     font-weight: 200;
   }
 }

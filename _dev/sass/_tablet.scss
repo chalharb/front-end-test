@@ -1,18 +1,48 @@
 /* Small devices (tablets, 768px to 992px) */
-@media (min-width : $screen-sm) {
+@media (min-width: $screen-sm) {
+
+  .hospital-info {
+    &--left {
+      a {
+        img {
+          width: 350px;
+          margin-top: 5px;
+        }
+      }
+    }
+
+    &--right {
+
+      .wait-time--heading {
+        text-align: right;
+        &:after {  }
+      }
+      .wait-time-left {
+        .location {  }
+        .time {  }
+      }
+      .wait-time-right {
+        .timer {
+          .timer-amount {  }
+        }
+      }
+    }
+  }
 
   .page-heading {
     h1 {
-      margin : 68px 0 0;
+      margin: 68px 0 0;
 
-      &:after { margin : 20px 0 20px; }
+      &:after {
+        margin: 20px 0 20px;
+      }
     }
 
     .breadcrumb {
       li {
         a {
           i {
-            &:hover { }
+            &:hover {  }
           }
         }
       }
@@ -20,10 +50,9 @@
   }
 
   .page-content {
-    padding : 50px 0 95px;
+    padding: 50px 0 95px;
     h3 {
-      //padding-bottom : 50px;
-      margin         : 0;
+      margin: 0;
     }
   }
 }
